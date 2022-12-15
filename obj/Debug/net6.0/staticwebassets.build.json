@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zFcVzmwFCA8QmDjdBVBDhP0k11oynu2d037KH+CA4YI=",
+  "Source": "TryitterAPI",
+  "BasePath": "_content/TryitterAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
