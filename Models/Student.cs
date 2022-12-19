@@ -1,8 +1,8 @@
 namespace TryitterApi.Models
 {
-    public class Studant
+    public class Student
     {
-        public int StudandId { get; set; }
+        public int StudentId { get; set; }
 
         public string? Name { get; set; }
 
