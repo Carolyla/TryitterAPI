@@ -39,7 +39,7 @@ namespace TryitterAPI.Migrations
                         .HasColumnType("nvarchar(80)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
@@ -53,7 +53,7 @@ namespace TryitterAPI.Migrations
                         .HasColumnType("nvarchar(80)");
 
                     b.Property<DateTime>("UpdateAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.HasKey("PostId");
 
