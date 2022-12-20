@@ -10,10 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var sqlServerConnection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<MyContext>(options => 
-                              options.UseSqlServer(sqlServerConnection, 
-                              ServerVersion.AutoDetect(sqlServerConnection)));
+builder.Services.AddDbContext<MyContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MyContext") ?? throw new InvalidOperationException("Connection string 'MyContext' not found.")));
 
 var app = builder.Build();
 
