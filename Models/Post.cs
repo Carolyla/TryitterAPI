@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace TryitterApi.Models
 {
@@ -21,7 +22,8 @@ namespace TryitterApi.Models
         public DateTime? UpdateAt { get; set; }
         
         public int StudentId { get; set; }
-
+        
+        [JsonIgnore]
         public Student? Studant { get; set; }
         
     }
