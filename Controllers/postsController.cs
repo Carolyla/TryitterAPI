@@ -21,7 +21,7 @@ namespace TryitterApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Post>> Get()
         {
-            var posts = _context.Posts.ToList();
+            var posts = _context.Posts.AsNoTracking().ToList();
             if(posts is null)
             {
                 return NotFound("Posts não encontrados!");
@@ -33,7 +33,7 @@ namespace TryitterApi.Controllers
         
         public ActionResult<Post> Get(int id)
         {
-            var posts = _context.Posts.FirstOrDefault(post => post.PostId == id);
+            var posts = _context.Posts.AsNoTracking().FirstOrDefault(post => post.PostId == id);
             if (posts is null)
             {
                 return NotFound("Post não encontrado");

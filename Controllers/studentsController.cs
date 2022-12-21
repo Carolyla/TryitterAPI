@@ -21,7 +21,7 @@ namespace TryitterApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Student>> Get()
         {
-            var student = _context.Students.ToList();
+            var student = _context.Students.AsNoTracking().ToList();
             if (student is null)
             {
                 return NotFound("Usuário não encontrados!");
@@ -32,7 +32,7 @@ namespace TryitterApi.Controllers
         [HttpGet("posts")]
         public ActionResult<IEnumerable<Student>> GetStudantsAndPosts()
         {
-            var student = _context.Students.Include(p => p.Posts).ToList();
+            var student = _context.Students.AsNoTracking().Include(p => p.Posts).ToList();
             if (student is null)
             {
                 return NotFound("Usuário não encontrados!");
@@ -44,7 +44,7 @@ namespace TryitterApi.Controllers
 
         public ActionResult<Student> Get(int id)
         {
-            var student = _context.Students.FirstOrDefault(post => post.StudentId == id);
+            var student = _context.Students.AsNoTracking().FirstOrDefault(post => post.StudentId == id);
             if (student is null)
             {
                 return NotFound("Usuario não encontrado");
