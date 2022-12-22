@@ -5,7 +5,7 @@
 namespace TryitterAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class validacaoTabela : Migration
+    public partial class ValidacaoTabela : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

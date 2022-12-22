@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TryitterApi.Controllers
 {
-    [Route("[controller")]
+    [Route("[controller]")]
     [ApiController]
 
     public class StudentsController : ControllerBase
@@ -21,7 +21,7 @@ namespace TryitterApi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Student>> Get()
         {
-            var student = _context.Students.AsNoTracking().ToList();
+            var student = _context.Students.ToList();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
@@ -34,7 +34,7 @@ namespace TryitterApi.Controllers
         {
             try
             {
-            var student = _context.Students.AsNoTracking().Include(p => p.Posts).ToList();
+            var student = _context.Students.Include(p => p.Posts).ToList();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
@@ -54,7 +54,7 @@ namespace TryitterApi.Controllers
         {
             try
             {
-            var student = _context.Students.AsNoTracking().FirstOrDefault(post => post.StudentId == id);
+            var student = _context.Students.FirstOrDefault(post => post.StudentId == id);
             if (student is null)
             {
                 return NotFound($"Usuario com id= {id} não encontrado");

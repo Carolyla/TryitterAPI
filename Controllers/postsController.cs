@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TryitterApi.Controllers
 {
-    [Route("[controller")]
+    [Route("[controller]")]
     [ApiController]
 
     public class PostsController : ControllerBase
@@ -24,7 +24,7 @@ namespace TryitterApi.Controllers
 
             try
             {
-            var posts = _context.Posts.AsNoTracking().ToList();
+            var posts = _context.Posts.ToList();
             if(posts is null)
             {
                 return NotFound("Posts não encontrados!");
@@ -45,7 +45,7 @@ namespace TryitterApi.Controllers
         {
             try
             {
-            var posts = _context.Posts.AsNoTracking().FirstOrDefault(post => post.PostId == id);
+            var posts = _context.Posts.FirstOrDefault(post => post.PostId == id);
             if (posts is null)
             {
                 return NotFound($"Post com id= {id} não encontrado");

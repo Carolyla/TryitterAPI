@@ -13,7 +13,7 @@ namespace TryitterAPI.Migrations
 {
     [DbContext(typeof(MyContext))]
     [Migration("20221220173717_validacaoTabela")]
-    partial class validacaoTabela
+    partial class ValidacaoTabela
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
