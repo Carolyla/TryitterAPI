@@ -1,9 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using TryitterApi.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TryitterApi.Context
 {
-public class MyContext : DbContext
+public class MyContext : IdentityDbContext
     {
         public MyContext(DbContextOptions<MyContext> options)
                 : base(options)
