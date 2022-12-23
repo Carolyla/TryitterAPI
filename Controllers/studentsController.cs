@@ -19,9 +19,9 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Student>> Get()
+        public async Task<ActionResult<IEnumerable<Student>>> Get()
         {
-            var student = _context.Students.ToList();
+            var student = await _context.Students.ToListAsync();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
@@ -30,11 +30,11 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet("posts")]
-        public ActionResult<IEnumerable<Student>> GetStudantsAndPosts()
+        public async Task<ActionResult<IEnumerable<Student>>> GetStudantsAndPosts()
         {
             try
             {
-            var student = _context.Students.Include(p => p.Posts).ToList();
+            var student = await _context.Students.Include(p => p.Posts).ToListAsync();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
@@ -50,11 +50,11 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet("{id:int}", Name = "Obter Usuario")]
-        public ActionResult<Student> Get(int id)
+        public async Task<ActionResult<Student>> Get(int id)
         {
             try
             {
-            var student = _context.Students.FirstOrDefault(post => post.StudentId == id);
+            var student = await _context.Students.FirstOrDefaultAsync(post => post.StudentId == id);
             if (student is null)
             {
                 return NotFound($"Usuario com id= {id} não encontrado");
@@ -70,15 +70,15 @@ namespace TryitterApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(Student student)
+        public  async Task<ActionResult> Post(Student student)
         {
             try
             {
             if (student is null)
                 return BadRequest("Não foi possível criar um novo cadastro");
 
-            _context.Students.Add(student);
-            _context.SaveChanges();
+            await _context.Students.AddAsync(student);
+            await _context.SaveChangesAsync();
 
             return new CreatedAtRouteResult("ObterUsuario",
             new { id = student.StudentId }, student);
