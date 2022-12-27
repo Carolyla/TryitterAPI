@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "34Ihj8fr8qXg2RdPKMzRVuUyVrH9GPQF/PHMkTzzOjxVCaD0RKvjgemnQpgXVTSFdooJTdJTbaGQ1p4QUFtUIw==",
+  "dgSpecHash": "vJ478Y0PIt2L6nvmpz4z7x9pbLuaQJ/GA2/ozENkQrm3nAc5xLRczVpJpHsTpiatEpVckI5bsv456RdYppnVxw==",
   "success": true,
   "projectFilePath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI.csproj",
   "expectedPackageFiles": [
+    "/home/carol/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
+    "/home/carol/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/home/carol/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/home/carol/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
     "/home/carol/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
@@ -11,7 +13,7 @@
     "/home/carol/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.12/microsoft.aspnetcore.cryptography.keyderivation.6.0.12.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.12/microsoft.aspnetcore.identity.entityframeworkcore.6.0.12.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "/home/carol/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/carol/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.data.sqlclient/5.0.1/microsoft.data.sqlclient.5.0.1.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.0.1/microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.entityframeworkcore/7.0.1/microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
