@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using TryitterApi.Context;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Identity;
+using AutoMapper;
+using TryitterApi.DTOs.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,13 @@ builder.Services.AddDbContext<MyContext>(options =>
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                .AddEntityFrameworkStores<MyContext>()
                .AddDefaultTokenProviders();
+
+var mappingConfig = new MapperConfiguration(MyContext => {
+    MyContext.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 
