@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using TryitterApi.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using TryitterApi.DTOs;
 
 namespace TryitterApi.Controllers
 {
@@ -12,25 +14,28 @@ namespace TryitterApi.Controllers
     public class StudentsController : ControllerBase
     {
         private readonly MyContext _context;
+        private readonly IMapper _mapper;
 
-        public StudentsController(MyContext context)
+        public StudentsController(MyContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> Get()
+        public async Task<ActionResult<IEnumerable<StudentDTO>>> Get()
         {
             var student = await _context.Students.ToListAsync();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
             }
-            return student;
+            var studentDTO = _mapper.Map<List<StudentDTO>>(student);
+            return studentDTO;
         }
 
         [HttpGet("posts")]
-        public async Task<ActionResult<IEnumerable<Student>>> GetStudantsAndPosts()
+        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudantsAndPosts()
         {
             try
             {
@@ -39,7 +44,8 @@ namespace TryitterApi.Controllers
             {
                 return NotFound("Usuários não encontrados!");
             }
-            return student;
+            var studentDTO = _mapper.Map<List<StudentDTO>>(student);
+            return studentDTO;
 
             }
             catch (Exception)
@@ -50,7 +56,7 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet("{id:int}", Name = "Obter Usuario")]
-        public async Task<ActionResult<Student>> Get(int id)
+        public async Task<ActionResult<StudentDTO>> Get(int id)
         {
             try
             {
@@ -59,7 +65,10 @@ namespace TryitterApi.Controllers
             {
                 return NotFound($"Usuario com id= {id} não encontrado");
             }
-            return student;
+                var studentDTO = _mapper.Map<StudentDTO>(student);
+                
+                return studentDTO;
+        
 
             }
             catch (Exception)

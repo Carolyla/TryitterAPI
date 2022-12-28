@@ -85,3 +85,5 @@
 /home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
 /home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
+/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/AutoMapper.dll
+/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

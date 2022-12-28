@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using TryitterApi.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+using TryitterApi.DTOs;
 
 namespace TryitterApi.Controllers
 {
@@ -12,14 +14,16 @@ namespace TryitterApi.Controllers
     public class PostsController : ControllerBase
     {
         private readonly MyContext _context;
+        private readonly IMapper _mapper;
 
-        public PostsController(MyContext context)
+        public PostsController(MyContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         
         [HttpGet]
-        public ActionResult<IEnumerable<Post>> Get()
+        public ActionResult<IEnumerable<PostDTO>> Get()
         {
 
             try
@@ -29,7 +33,8 @@ namespace TryitterApi.Controllers
             {
                 return NotFound("Posts não encontrados!");
             }
-            return posts;
+            var postsDTO = _mapper.Map<List<PostDTO>>(posts);
+            return postsDTO;
                 
             }
             catch (Exception)
@@ -41,7 +46,7 @@ namespace TryitterApi.Controllers
 
         [HttpGet("{id:int}", Name = "Obter produto")]
         
-        public ActionResult<Post> Get(int id)
+        public ActionResult<PostDTO> Get(int id)
         {
             try
             {
@@ -50,7 +55,9 @@ namespace TryitterApi.Controllers
             {
                 return NotFound($"Post com id= {id} não encontrado");
             }
-            return posts; 
+                var postsDTO = _mapper.Map<PostDTO>(posts);
+            
+                return postsDTO; 
             }
 
             catch (Exception)
@@ -61,18 +68,22 @@ namespace TryitterApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(Post post)
+        public ActionResult Post(PostDTO postDto)
         {
             try
             {
+            var post = _mapper.Map<Post>(postDto);    
             if(post is null)
                 return BadRequest();
 
                 _context.Posts.Add(post);
                 _context.SaveChanges();
 
+            var postDTO = _mapper.Map<PostDTO>(post);
+
+
                 return new CreatedAtRouteResult("ObterProduto",
-                new { id = post.PostId }, post);
+                new { id = post.PostId }, postDTO);
                 
             }
             catch(Exception)
