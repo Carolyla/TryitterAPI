@@ -4,11 +4,14 @@ using TryitterApi.Models;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using TryitterApi.DTOs;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TryitterApi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 
     public class PostsController : ControllerBase
     {

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using TryitterApi.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 

@@ -5,11 +5,15 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using TryitterApi.DTOs;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace TryitterApi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
 
     public class StudentsController : ControllerBase
     {
