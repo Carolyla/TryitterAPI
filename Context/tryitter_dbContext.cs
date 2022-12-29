@@ -11,8 +11,8 @@ public class MyContext : IdentityDbContext
         { }
 
         // Adicionamos Student como um DbSet
-        public DbSet<Student>? Students { get; set; }
-        public DbSet<Post>? Posts { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Post> Posts { get; set; }
         
     }
     

@@ -12,19 +12,19 @@ namespace TryitterApi.Models
         [Required]
         
         [MaxLength(80, ErrorMessage = "Número de caracters excedido")]
-        public string? Title { get; set; }
+        public string Title { get; set; }
 
         [Required]
         [MaxLength(500, ErrorMessage = "Número de caracters excedido")]
-        public string? Content { get; set; }
-        public string? ImageUrl { get; set; }
-        public DateTime? CreatedAt { get; set; }
-        public DateTime? UpdateAt { get; set; }
+        public string Content { get; set; }
+        public string ImageUrl { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdateAt { get; set; }
         
         public int StudentId { get; set; }
         
         [JsonIgnore]
-        public Student? Studant { get; set; }
+        public Student Studant { get; set; }
         
     }
 

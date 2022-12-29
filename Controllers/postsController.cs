@@ -1,7 +1,6 @@
 using TryitterApi.Context;
 using Microsoft.AspNetCore.Mvc;
 using TryitterApi.Models;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using TryitterApi.DTOs;

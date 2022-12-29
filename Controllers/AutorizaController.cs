@@ -9,12 +9,12 @@ namespace TryitterApi.Controllers
     public class AutorizaController : ControllerBase
     {
         private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _singInManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
         public AutorizaController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
-            _singInManager = signInManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -27,9 +27,9 @@ namespace TryitterApi.Controllers
 
         public async Task<ActionResult> RegisterUser(UserDTO model)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState.Values.SelectMany(e=> e.Errors));
+                return BadRequest(ModelState.Values.SelectMany(e => e.Errors));
             }
             var user = new IdentityUser
             {
@@ -42,9 +42,31 @@ namespace TryitterApi.Controllers
             {
                 return BadRequest(result.Errors);
             }
-            await _singInManager.SingInAsync(user, false);
+            await _signInManager.SignInAsync(user, false);
             return Ok();
 
+        }
+        [HttpPost("Login")]
+
+        public async Task<ActionResult> Login(UserDTO userInfo)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return BadRequest(ModelState.Values.SelectMany(e=> e.Errors));
+            }
+            var result = await _signInManager.PasswordSignInAsync(userInfo.Email, 
+                userInfo.Password, isPersistent: false, lockoutOnFailure: false);
+            
+            if (result.Succeeded)
+            {
+                return Ok();
+            }
+
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Login Inválido...");
+                return BadRequest(ModelState);
+            }
         }
     }
 }
