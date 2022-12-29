@@ -4,6 +4,9 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Identity;
 using AutoMapper;
 using TryitterApi.DTOs.Mappings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +26,21 @@ builder.Services.AddDbContext<MyContext>(options =>
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                .AddEntityFrameworkStores<MyContext>()
                .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(
+    JwtBearerDefaults.AuthenticationScheme).
+    AddJwtBearer(options=> options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidAudience = builder.Configuration["TokenConfiguration:Audience"],
+        ValidIssuer = builder.Configuration["TokenConfiguration:Issuer"],
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.
+        GetBytes(builder.Configuration["Jwt:Key"]))
+
+    });
 
 var mappingConfig = new MapperConfiguration(MyContext => {
     MyContext.AddProfile(new MappingProfile());
