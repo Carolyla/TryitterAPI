@@ -16,10 +16,12 @@ namespace TryitterApi.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IConfiguration _configuration;
 
-        public AutorizaController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AutorizaController(UserManager<IdentityUser> userManager,
+         SignInManager<IdentityUser> signInManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _configuration = configuration;
         }
 
         [HttpGet]
@@ -92,7 +94,7 @@ namespace TryitterApi.Controllers
             var expiration = DateTime.UtcNow.AddHours(double.Parse(expConfig));
 
             //classe que representa um token JWT e gera token
-            JwtSecurityToken token = new(
+            JwtSecurityToken token = new JwtSecurityToken(
                 issuer: _configuration["TokenConfiguration:Issuer"],
                 audience: _configuration["TokenConfiguration:Audience"],
                 claims: claims,
@@ -113,3 +115,10 @@ namespace TryitterApi.Controllers
 
     }
 }
+
+// login para teste no swagger, colocar no readme
+// {
+//   "email": "helena@email.com",
+//   "password": "String1@",
+//   "confirmPassword": "String1@"
+// }
