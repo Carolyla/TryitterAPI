@@ -30,7 +30,7 @@ namespace TryitterApi.Controllers
             return "AutorizaController :: Acessdo em : " + DateTime.Now.ToLongDateString();
         }
 
-        [HttpPost("register")]
+        [HttpPost("Register")]
 
         public async Task<ActionResult> RegisterUser(UserDTO model)
         {

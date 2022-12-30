@@ -88,3 +88,5 @@
 /home/carol/Documentos/Curso/Desafios C#/TryitterAPI/obj/Debug/net6.0/TryitterAPI.genruntimeconfig.cache
 /home/carol/Documentos/Curso/Desafios C#/TryitterAPI/obj/Debug/net6.0/ref/TryitterAPI.dll
 /home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/bin/Debug/net6.0/TryitterAPI.xml
+/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/obj/Debug/net6.0/TryitterAPI.xml

@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TryitterAPI</name>
+    </assembly>
+    <members>
+        <member name="M:TryitterApi.Controllers.PostsController.Get(System.Int32)">
+            <summary>
+            Exibe um post através de seu Id. digite o número do post e clique em executar.
+            </summary>
+            <returns>Retorna um objeto com as informações do post de Id conrrespondente</returns>
+        </member>
+        <member name="T:TryitterAPI.Migrations.MigracaoInicial">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.MigracaoInicial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.MigracaoInicial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.MigracaoInicial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TryitterAPI.Migrations.ValidacaoTabela">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.ValidacaoTabela.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.ValidacaoTabela.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.ValidacaoTabela.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TryitterAPI.Migrations.PopulaStudents">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.PopulaStudents.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.PopulaStudents.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.PopulaStudents.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TryitterAPI.Migrations.PopulaPosts">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.PopulaPosts.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.PopulaPosts.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.PopulaPosts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TryitterAPI.Migrations.Identity">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.Identity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.Identity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TryitterAPI.Migrations.Identity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -45,7 +45,10 @@ namespace TryitterApi.Controllers
                "Não conseguimos completar sua solicitação");
             }
         }
-
+        /// <summary>
+        /// Exibe um post através de seu Id. digite o número do post e clique em executar.
+        /// </summary>
+        /// <returns>Retorna um objeto com as informações do post de Id conrrespondente</returns>
         [HttpGet("{id:int}", Name = "Obter produto")]
         
         public ActionResult<PostDTO> Get(int id)
