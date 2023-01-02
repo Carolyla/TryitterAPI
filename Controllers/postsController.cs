@@ -6,6 +6,7 @@ using AutoMapper;
 using TryitterApi.DTOs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using TryitterApi.Repository;
 
 namespace TryitterApi.Controllers
 {
@@ -15,12 +16,12 @@ namespace TryitterApi.Controllers
 
     public class PostsController : ControllerBase
     {
-        private readonly MyContext _context;
+        private readonly IUnitOfWork _uof;
         private readonly IMapper _mapper;
 
-        public PostsController(MyContext context, IMapper mapper)
+        public PostsController(IUnitOfWork context, IMapper mapper)
         {
-            _context = context;
+            _uof = context;
             _mapper = mapper;
         }
         
@@ -30,7 +31,7 @@ namespace TryitterApi.Controllers
 
             try
             {
-            var posts = _context.Posts.ToList();
+            var posts = _uof.PostRepository.Get().ToList();
             if(posts is null)
             {
                 return NotFound("Posts não encontrados!");
@@ -55,7 +56,7 @@ namespace TryitterApi.Controllers
         {
             try
             {
-            var posts = _context.Posts.FirstOrDefault(post => post.PostId == id);
+            var posts = _uof.PostRepository.GetById(post => post.PostId == id);
             if (posts is null)
             {
                 return NotFound($"Post com id= {id} não encontrado");
@@ -81,8 +82,8 @@ namespace TryitterApi.Controllers
             if(post is null)
                 return BadRequest();
 
-                _context.Posts.Add(post);
-                _context.SaveChanges();
+                _uof.PostRepository.Add(post);
+                _uof.Commit();
 
             var postDTO = _mapper.Map<PostDTO>(post);
 
@@ -110,8 +111,8 @@ namespace TryitterApi.Controllers
                 return BadRequest($"Post com id= {id} não encontrado");
             }
 
-            _context.Entry(post).State = EntityState.Modified;
-            _context.SaveChanges();
+            _uof.PostRepository.Update(post);
+            _uof.Commit();
 
             return Ok(post);
                 
@@ -128,14 +129,14 @@ namespace TryitterApi.Controllers
         {
             try
             {
-            var post = _context.Posts.FirstOrDefault(p => p.PostId == id);
+            var post = _uof.PostRepository.GetById(p => p.PostId == id);
 
             if(post is null)
             {
                 return NotFound($"Post com id= {id} não encontrado");
             }
-            _context.Posts.Remove(post);
-            _context.SaveChanges();
+            _uof.PostRepository.Delete(post);
+            _uof.Commit();
 
             return Ok(post);
 

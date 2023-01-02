@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using TryitterApi.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -71,6 +72,8 @@ builder.Services.AddAuthentication(
         GetBytes(builder.Configuration["Jwt:Key"]))
 
     });
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var mappingConfig = new MapperConfiguration(MyContext => {
     MyContext.AddProfile(new MappingProfile());
