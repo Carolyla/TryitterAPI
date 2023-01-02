@@ -7,6 +7,7 @@ using AutoMapper;
 using TryitterApi.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using TryitterApi.Repository;
 
 namespace TryitterApi.Controllers
 {
@@ -17,19 +18,19 @@ namespace TryitterApi.Controllers
 
     public class StudentsController : ControllerBase
     {
-        private readonly MyContext _context;
+        private readonly IUnitOfWork _uof;
         private readonly IMapper _mapper;
 
-        public StudentsController(MyContext context, IMapper mapper)
+        public StudentsController(IUnitOfWork context, IMapper mapper)
         {
-            _context = context;
+            _uof = context;
             _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StudentDTO>>> Get()
+        public ActionResult<IEnumerable<StudentDTO>> Get()
         {
-            var student = await _context.Students.ToListAsync();
+            var student =  _uof.StudentRepository.Get().ToList();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
@@ -39,11 +40,11 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet("posts")]
-        public async Task<ActionResult<IEnumerable<StudentDTO>>> GetStudantsAndPosts()
+        public ActionResult<IEnumerable<StudentDTO>> GetStudantsAndPosts()
         {
             try
             {
-            var student = await _context.Students.Include(p => p.Posts).ToListAsync();
+            var student = _uof.StudentRepository.GetStudantsAndPosts().ToList();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
@@ -60,11 +61,11 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet("{id:int}", Name = "Obter Usuario")]
-        public async Task<ActionResult<StudentDTO>> Get(int id)
+        public ActionResult<StudentDTO> Get(int id)
         {
             try
             {
-            var student = await _context.Students.FirstOrDefaultAsync(post => post.StudentId == id);
+            var student =  _uof.StudentRepository.GetById(post => post.StudentId == id);
             if (student is null)
             {
                 return NotFound($"Usuario com id= {id} não encontrado");
@@ -83,15 +84,15 @@ namespace TryitterApi.Controllers
         }
 
         [HttpPost]
-        public  async Task<ActionResult> Post(Student student)
+        public ActionResult Post(Student student)
         {
             try
             {
             if (student is null)
                 return BadRequest("Não foi possível criar um novo cadastro");
 
-            await _context.Students.AddAsync(student);
-            await _context.SaveChangesAsync();
+             _uof.StudentRepository.Add(student);
+             _uof.Commit();
 
             return new CreatedAtRouteResult("ObterUsuario",
             new { id = student.StudentId }, student);
@@ -115,9 +116,8 @@ namespace TryitterApi.Controllers
                 return BadRequest($"Usuario com id= {id} não encontrado");
             }
 
-            _context.Entry(student).State = EntityState.Modified;
-            _context.SaveChanges();
-
+                _uof.StudentRepository.Update(student);
+                _uof.Commit();
             return Ok(student);
 
             }
@@ -133,14 +133,14 @@ namespace TryitterApi.Controllers
         {
             try
             {
-            var student = _context.Students.FirstOrDefault(p => p.StudentId == id);
+            var student = _uof.StudentRepository.GetById(p => p.StudentId == id);
 
             if (student is null)
             {
                 return NotFound($"Usuario com id= {id} não encontrado");
             }
-            _context.Students.Remove(student);
-            _context.SaveChanges();
+                _uof.StudentRepository.Delete(student);
+                _uof.Commit();
 
             return Ok(student);
 
@@ -152,5 +152,5 @@ namespace TryitterApi.Controllers
             }
         }
 
-    }
+     }
 }
