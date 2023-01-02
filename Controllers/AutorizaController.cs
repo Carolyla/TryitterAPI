@@ -122,3 +122,4 @@ namespace TryitterApi.Controllers
 //   "password": "String1@",
 //   "confirmPassword": "String1@"
 // }
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImhlbGVuYUBlbWFpbC5jb20iLCJtZXVDbGFpbiI6ImNyaXB0byIsImp0aSI6IjY0MTNjOThhLWMzZjgtNGVlZi04MTY2LTlmYTRjNWY5OGRjNiIsImV4cCI6MTY3NDQ2Nzc5MSwiaXNzIjoiVHJ5aXR0ZXJfSXNzdWVyIiwiYXVkIjoiVHJ5aXR0ZXJfQXVkaWVuY2UifQ.NBDAKT7CpwpW_mRJ672Jp3Q2dEKBwkxZzlq8870lkFQ

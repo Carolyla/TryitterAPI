@@ -46,6 +46,12 @@ namespace TryitterApi.Controllers
                "Não conseguimos completar sua solicitação");
             }
         }
+
+        [HttpGet("OrdemDeCriação")]
+        public ActionResult<IEnumerable<Post>> GetPostCreated()
+        {
+            return _uof.PostRepository.GetByCreated().ToList();
+        }
         /// <summary>
         /// Exibe um post através de seu Id. digite o número do post e clique em executar.
         /// </summary>
