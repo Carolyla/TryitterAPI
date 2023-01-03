@@ -23,6 +23,8 @@ namespace TryitterApi.Controllers
             _signInManager = signInManager;
             _configuration = configuration;
         }
+        
+        // public AutorizaController(){}
 
         [HttpGet]
         public ActionResult<string> Get()
@@ -75,7 +77,9 @@ namespace TryitterApi.Controllers
                 return BadRequest(ModelState);
             }
         }
-        private UserToken GeraToken(UserDTO userInfo)
+
+        [NonAction]
+        public UserToken GeraToken(UserDTO userInfo)
         {
             var claims = new[]
             {

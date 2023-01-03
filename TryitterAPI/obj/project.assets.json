@@ -5433,7 +5433,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
       "Swashbuckle.AspNetCore >= 6.2.3",
-      "System.IdentityModel.Tokens.Jwt >= 6.25.1"
+      "System.IdentityModel.Tokens.Jwt >= 6.25.1",
+      "System.Text.Json >= 7.0.0"
     ]
   },
   "packageFolders": {
@@ -5518,6 +5519,10 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[6.25.1, )"
+          },
+          "System.Text.Json": {
+            "target": "Package",
+            "version": "[7.0.0, )"
           }
         },
         "imports": [

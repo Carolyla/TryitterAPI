@@ -1,82 +1,42 @@
-using System.Net;
-using System.Net.Http.Json;
-using FluentAssertions;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
-using Xunit;
+using TryitterApi.Context;
 
-namespace TryitterApi.Test;
-
-public class PostControllerTest : IClassFixture<WebApplicationFactory<Program>>
+namespace TryitterApixUnit
 {
-    private readonly WebApplicationFactory<Program> _factory;
-
-    public PostControllerTest(WebApplicationFactory<Program> factory)
+public class TestContext<TEntryPoint> : WebApplicationFactory<Program> where TEntryPoint : Program
+{
+    protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
-        _factory = factory;
+        builder.ConfigureServices(services =>
+        {
+            var descriptor = services.SingleOrDefault(
+                d => d.ServiceType ==
+                    typeof(DbContextOptions<MyContext>));
+            if (descriptor != null)
+                services.Remove(descriptor);
+            services.AddDbContext<MyContext>(options =>
+            {
+                  options.UseInMemoryDatabase("InMemoryQuizTest");
+              });
+            var sp = services.BuildServiceProvider();
+            using (var scope = sp.CreateScope())
+            using (var appContext = scope.ServiceProvider.GetRequiredService<MyContext>())
+            {
+                try
+                {
+                    appContext.Database.EnsureCreated();
+                }
+                catch (Exception e)
+                {
+                    throw e;
+                }
+            }
+        });
     }
+}
 
-    [Fact]
-    public async Task PostShouldReturnOk()
-    {
-        var client = _factory.CreateClient();
-
-        var response = await client.GetAsync("/Post");
-
-        response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
-    }
-
-    [Fact]
-    public async Task PostShouldReturnContent()
-    {
-        var client = _factory.CreateClient();
-
-        var response = await client.GetAsync("/Post");
-
-        response.Content.Should().NotBeNull();
-    }
-
-    [Fact]
-    public async Task PostShouldReturnContentWithText()
-    {
-        var client = _factory.CreateClient();
-
-        var response = await client.GetAsync("/Post");
-
-        var content = await response.Content.ReadAsStringAsync();
-
-        content.Should().NotBeNullOrEmpty();
-    }
-
-    [Theory]
-    [InlineData(1)]
-    public async Task GetPostByIdTest(int id)
-    {
-        var client = _factory.CreateClient();
-        var response = await client.GetAsync($"/Post/{id}");
-
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
-    }
-
-    [Fact]
-    public async Task PostReturnOkUpdatePost()
-    {
-        var client = _factory.CreateClient();
-
-        var response = await client.GetAsync("/Post");
-
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
-        response.Content.Headers.ContentType.ToString().Should().Be("application/json; charset=utf-8");
-    }
-
-    [Fact]
-    public async Task PostReturnOkDeletePost()
-    {
-        var client = _factory.CreateClient();
-
-        var response = await client.GetAsync("/Post");
-
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
-        response.Content.Headers.ContentType.ToString().Should().Be("application/json; charset=utf-8");
-    }
 }

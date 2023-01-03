@@ -4,14 +4,14 @@
     "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj": {}
   },
   "projects": {
-    "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj": {
+    "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI/TryitterAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj",
-        "projectName": "TryitterApixUnit.Test",
-        "projectPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj",
+        "projectUniqueName": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI/TryitterAPI.csproj",
+        "projectName": "TryitterAPI",
+        "projectPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI/TryitterAPI.csproj",
         "packagesPath": "/home/carol/.nuget/packages/",
-        "outputPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/obj/",
+        "outputPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/carol/.nuget/NuGet/NuGet.Config"
@@ -38,6 +38,118 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.25.1, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj",
+        "projectName": "TryitterApixUnit.Test",
+        "projectPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj",
+        "packagesPath": "/home/carol/.nuget/packages/",
+        "outputPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/carol/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI/TryitterAPI.csproj": {
+                "projectPath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterAPI/TryitterAPI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
             "FluentAssertions": {
               "target": "Package",
               "version": "[6.5.1, )"
@@ -45,6 +157,10 @@
             "Microsoft.AspNetCore.Mvc.Testing": {
               "target": "Package",
               "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
