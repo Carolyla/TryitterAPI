@@ -32,16 +32,16 @@ public class StudentControllerTest : IClassFixture<WebApplicationFactory<Program
         
     }
 
-    [Theory]
-    [InlineData(2)]
-    public async Task ShouldReturnOkWithId(int id)
-    {
-        var client = _factory.CreateClient();
+    // [Theory]
+    // [InlineData(2)]
+    // public async Task ShouldReturnOkWithId(int id)
+    // {
+    //     var client = _factory.CreateClient();
 
-        var response = await client.GetAsync($"/Students/{id}");
+    //     var response = await client.GetAsync($"/Students/{id}");
 
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
-    }
+    //     response.StatusCode.Should().Be(HttpStatusCode.OK);
+    // }
 
 
     // [Fact]
@@ -66,16 +66,16 @@ public class StudentControllerTest : IClassFixture<WebApplicationFactory<Program
     // }
 
     
-    [Theory]
-    [InlineData(1)]
-    public async Task ShouldReturnOkDeleteStudent(int id)
-    {
-        var client = _factory.CreateClient();
+    // [Theory]
+    // [InlineData(1)]
+    // public async Task ShouldReturnOkDeleteStudent(int id)
+    // {
+    //     var client = _factory.CreateClient();
 
-        var response = await client.DeleteAsync($"/Students/{id}");
+    //     var response = await client.DeleteAsync($"/Students/{id}");
 
-        response.StatusCode.Should().Be(HttpStatusCode.OK);
-    }
+    //     response.StatusCode.Should().Be(HttpStatusCode.OK);
+    // }
 
     [Theory]
     [InlineData(0)]

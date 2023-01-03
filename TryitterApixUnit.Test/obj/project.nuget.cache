@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CRLsn3itzZvAmfVbKASDu0yA6+q8IIcwEtpGArRZXyPns3Ai1IsGM/LnFjTFrEQlthlRxdf0CHTI3rBuf3ed5w==",
+  "dgSpecHash": "mCILWaT+KpZ1jgMhcybViAEI2T5dE0cv0zY1GfjhdocRXEyZxQM4uOng6d+f69q8eDqL3kAIvry5rIQ+prqyQg==",
   "success": true,
   "projectFilePath": "/home/carol/Documentos/Curso/Desafios C#/TryitterAPI/TryitterApixUnit.Test/TryitterApixUnit.Test.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "/home/carol/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/home/carol/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
     "/home/carol/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
+    "/home/carol/.nuget/packages/coverlet.msbuild/3.2.0/coverlet.msbuild.3.2.0.nupkg.sha512",
     "/home/carol/.nuget/packages/fluentassertions/6.5.1/fluentassertions.6.5.1.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/home/carol/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
