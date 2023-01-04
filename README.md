@@ -12,12 +12,12 @@ além de ser possível criar usuários pra autenticação
 ## Como executar o projeto
 Para rodar a API localmente utilizando Docker, certifique-se de ter o Docker esteja instalado instalados em sua máquina.
 
-Clone o repositório
-git@github.com:Carolyla/TryitterAPI.git
-Entre na pasta do repositório que você acabou de clonar:
+Clone o repositório:</br>
+git@github.com:Carolyla/TryitterAPI.git </br>
+Entre na pasta do repositório que você acabou de clonar:</br>
 cd TryitterAPI
-Rode o comando no seu terminal para baixar a imagem do SQL Server
-docker pull mcr.microsoft.com/mssql/server
+Rode o comando no seu terminal para baixar a imagem do SQL Server</br>
+docker pull mcr.microsoft.com/mssql/server</br>
 Assim que o container do SQL já está rodando, atualize a connectionString no arquivo appsettings.json.
 "ConnectionStrings": {
   "DefaultConnection": "Server=127.0.0.1,1433;Database=Tryitter;User ID=sa;Password=PASSWORD;TrustServerCertificate=true"
