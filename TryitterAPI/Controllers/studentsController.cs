@@ -28,15 +28,27 @@ namespace TryitterApi.Controllers
         }
 
         [HttpGet]
+    
         public ActionResult<IEnumerable<StudentDTO>> Get()
         {
-            var student =  _uof.StudentRepository.Get().ToList();
+            try
+            {
+                var student =  _uof.StudentRepository.Get().ToList();
             if (student is null)
             {
                 return NotFound("Usuários não encontrados!");
             }
             var studentDTO = _mapper.Map<List<StudentDTO>>(student);
+            
             return studentDTO;
+
+            }
+            catch (Exception)
+            {
+                
+                return BadRequest();
+            }
+            
         }
 
         [HttpGet("posts")]

@@ -40,7 +40,7 @@
             "51": 2,
             "52": 4,
             "54": 2,
-            "55": 10,
+            "55": 13,
             "57": 2,
             "58": 2,
             "59": 2,
@@ -108,7 +108,7 @@
               "EndOffset": 37,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 8
+              "Hits": 11
             }
           ]
         }
@@ -1605,9 +1605,9 @@
         },
         "System.Void TryitterApi.Repository.PostRepository::.ctor(TryitterApi.Context.MyContext)": {
           "Lines": {
-            "8": 5,
-            "9": 5,
-            "10": 5
+            "8": 6,
+            "9": 6,
+            "10": 6
           },
           "Branches": []
         }
@@ -1617,17 +1617,17 @@
       "TryitterApi.Repository.Repository`1": {
         "System.Linq.IQueryable`1<T> TryitterApi.Repository.Repository`1::Get()": {
           "Lines": {
-            "17": 6,
-            "18": 6,
-            "19": 6
+            "17": 7,
+            "18": 7,
+            "19": 7
           },
           "Branches": []
         },
         "T TryitterApi.Repository.Repository`1::GetById(System.Linq.Expressions.Expression`1<System.Func`2<T,System.Boolean>>)": {
           "Lines": {
-            "22": 2,
-            "23": 2,
-            "24": 2
+            "22": 5,
+            "23": 5,
+            "24": 5
           },
           "Branches": []
         },
@@ -1641,9 +1641,9 @@
         },
         "System.Void TryitterApi.Repository.Repository`1::Delete(T)": {
           "Lines": {
-            "32": 0,
-            "33": 0,
-            "34": 0
+            "32": 1,
+            "33": 1,
+            "34": 1
           },
           "Branches": []
         },
@@ -1658,10 +1658,10 @@
         },
         "System.Void TryitterApi.Repository.Repository`1::.ctor(TryitterApi.Context.MyContext)": {
           "Lines": {
-            "11": 8,
-            "12": 8,
-            "13": 8,
-            "14": 8
+            "11": 12,
+            "12": 12,
+            "13": 12,
+            "14": 12
           },
           "Branches": []
         }
@@ -1679,9 +1679,9 @@
         },
         "System.Void TryitterApi.Repository.StudentRepository::.ctor(TryitterApi.Context.MyContext)": {
           "Lines": {
-            "9": 3,
-            "10": 3,
-            "11": 3
+            "9": 6,
+            "10": 6,
+            "11": 6
           },
           "Branches": []
         }
@@ -1691,9 +1691,9 @@
       "TryitterApi.Repository.UnitOfWork": {
         "TryitterApi.Repository.IPostRepository TryitterApi.Repository.UnitOfWork::get_PostRepository()": {
           "Lines": {
-            "19": 5,
-            "20": 5,
-            "21": 5
+            "19": 6,
+            "20": 6,
+            "21": 6
           },
           "Branches": [
             {
@@ -1702,7 +1702,7 @@
               "EndOffset": 11,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 5
+              "Hits": 6
             },
             {
               "Line": 20,
@@ -1710,15 +1710,15 @@
               "EndOffset": 23,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 5
+              "Hits": 6
             }
           ]
         },
         "TryitterApi.Repository.IStudentRepository TryitterApi.Repository.UnitOfWork::get_StudentRepository()": {
           "Lines": {
-            "27": 3,
-            "28": 3,
-            "29": 3
+            "27": 7,
+            "28": 7,
+            "29": 7
           },
           "Branches": [
             {
@@ -1727,7 +1727,7 @@
               "EndOffset": 11,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 3
+              "Hits": 6
             },
             {
               "Line": 28,
@@ -1735,15 +1735,15 @@
               "EndOffset": 23,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 3
+              "Hits": 7
             }
           ]
         },
         "System.Void TryitterApi.Repository.UnitOfWork::Commit()": {
           "Lines": {
-            "33": 0,
-            "34": 0,
-            "35": 0
+            "33": 1,
+            "34": 1,
+            "35": 1
           },
           "Branches": []
         },
@@ -1757,10 +1757,10 @@
         },
         "System.Void TryitterApi.Repository.UnitOfWork::.ctor(TryitterApi.Context.MyContext)": {
           "Lines": {
-            "11": 8,
-            "12": 8,
-            "13": 8,
-            "14": 8
+            "11": 12,
+            "12": 12,
+            "13": 12,
+            "14": 12
           },
           "Branches": []
         }
@@ -1770,25 +1770,25 @@
       "TryitterApi.Models.Post": {
         "System.Int32 TryitterApi.Models.Post::get_PostId()": {
           "Lines": {
-            "11": 0
+            "11": 16
           },
           "Branches": []
         },
         "System.String TryitterApi.Models.Post::get_Title()": {
           "Lines": {
-            "15": 0
+            "15": 16
           },
           "Branches": []
         },
         "System.String TryitterApi.Models.Post::get_Content()": {
           "Lines": {
-            "19": 0
+            "19": 16
           },
           "Branches": []
         },
         "System.String TryitterApi.Models.Post::get_ImageUrl()": {
           "Lines": {
-            "20": 0
+            "20": 16
           },
           "Branches": []
         },
@@ -1806,7 +1806,7 @@
         },
         "System.Int32 TryitterApi.Models.Post::get_StudentId()": {
           "Lines": {
-            "24": 0
+            "24": 16
           },
           "Branches": []
         },
@@ -1822,40 +1822,40 @@
       "TryitterApi.Models.Student": {
         "System.Int32 TryitterApi.Models.Student::get_StudentId()": {
           "Lines": {
-            "14": 1
+            "14": 7
           },
           "Branches": []
         },
         "System.String TryitterApi.Models.Student::get_Name()": {
           "Lines": {
-            "18": 1
+            "18": 7
           },
           "Branches": []
         },
         "System.String TryitterApi.Models.Student::get_Email()": {
           "Lines": {
-            "23": 1
+            "23": 7
           },
           "Branches": []
         },
         "System.String TryitterApi.Models.Student::get_Password()": {
           "Lines": {
-            "29": 0
+            "29": 1
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<TryitterApi.Models.Post> TryitterApi.Models.Student::get_Posts()": {
           "Lines": {
-            "31": 2
+            "31": 14
           },
           "Branches": []
         },
         "System.Void TryitterApi.Models.Student::.ctor()": {
           "Lines": {
-            "9": 1,
-            "10": 1,
-            "11": 1,
-            "12": 1
+            "9": 7,
+            "10": 7,
+            "11": 7,
+            "12": 7
           },
           "Branches": []
         }
@@ -1865,31 +1865,31 @@
       "TryitterApi.DTOs.PostDTO": {
         "System.Int32 TryitterApi.DTOs.PostDTO::get_PostId()": {
           "Lines": {
-            "6": 0
+            "6": 32
           },
           "Branches": []
         },
         "System.String TryitterApi.DTOs.PostDTO::get_Title()": {
           "Lines": {
-            "7": 0
+            "7": 32
           },
           "Branches": []
         },
         "System.String TryitterApi.DTOs.PostDTO::get_Content()": {
           "Lines": {
-            "8": 0
+            "8": 32
           },
           "Branches": []
         },
         "System.String TryitterApi.DTOs.PostDTO::get_ImageUrl()": {
           "Lines": {
-            "9": 0
+            "9": 32
           },
           "Branches": []
         },
         "System.Int32 TryitterApi.DTOs.PostDTO::get_StudentId()": {
           "Lines": {
-            "10": 0
+            "10": 32
           },
           "Branches": []
         }
@@ -1899,25 +1899,25 @@
       "TryitterApi.DTOs.StudentDTO": {
         "System.Int32 TryitterApi.DTOs.StudentDTO::get_StudentId()": {
           "Lines": {
-            "5": 2
+            "5": 9
           },
           "Branches": []
         },
         "System.String TryitterApi.DTOs.StudentDTO::get_Name()": {
           "Lines": {
-            "6": 2
+            "6": 9
           },
           "Branches": []
         },
         "System.String TryitterApi.DTOs.StudentDTO::get_Email()": {
           "Lines": {
-            "7": 2
+            "7": 9
           },
           "Branches": []
         },
         "System.Collections.Generic.ICollection`1<TryitterApi.DTOs.PostDTO> TryitterApi.DTOs.StudentDTO::get_Posts()": {
           "Lines": {
-            "8": 2
+            "8": 9
           },
           "Branches": []
         }
@@ -1977,11 +1977,11 @@
       "TryitterApi.DTOs.Mappings.MappingProfile": {
         "System.Void TryitterApi.DTOs.Mappings.MappingProfile::.ctor()": {
           "Lines": {
-            "8": 2,
-            "9": 2,
-            "10": 2,
-            "11": 2,
-            "12": 2
+            "8": 3,
+            "9": 3,
+            "10": 3,
+            "11": 3,
+            "12": 3
           },
           "Branches": []
         }
@@ -2210,19 +2210,19 @@
         },
         "Microsoft.AspNetCore.Mvc.ActionResult`1<TryitterApi.DTOs.PostDTO> TryitterApi.Controllers.PostsController::Get(System.Int32)": {
           "Lines": {
-            "62": 0,
-            "64": 0,
-            "65": 0,
-            "66": 0,
+            "62": 1,
+            "64": 1,
+            "65": 1,
+            "66": 1,
             "67": 0,
             "68": 0,
-            "70": 0,
-            "72": 0,
+            "70": 1,
+            "72": 1,
             "75": 0,
             "76": 0,
             "77": 0,
             "78": 0,
-            "80": 0
+            "80": 1
           },
           "Branches": [
             {
@@ -2239,7 +2239,7 @@
               "EndOffset": 208,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         },
@@ -2353,11 +2353,11 @@
         },
         "System.Void TryitterApi.Controllers.PostsController::.ctor(TryitterApi.Repository.IUnitOfWork,AutoMapper.IMapper)": {
           "Lines": {
-            "22": 5,
-            "23": 5,
-            "24": 5,
-            "25": 5,
-            "26": 5
+            "22": 6,
+            "23": 6,
+            "24": 6,
+            "25": 6,
+            "26": 6
           },
           "Branches": []
         }
@@ -2367,53 +2367,22 @@
       "TryitterApi.Controllers.StudentsController": {
         "Microsoft.AspNetCore.Mvc.ActionResult`1<System.Collections.Generic.IEnumerable`1<TryitterApi.DTOs.StudentDTO>> TryitterApi.Controllers.StudentsController::Get()": {
           "Lines": {
-            "32": 1,
-            "33": 1,
-            "34": 1,
-            "35": 0,
-            "36": 0,
-            "38": 1,
-            "39": 1,
-            "40": 1
-          },
-          "Branches": [
-            {
-              "Line": 34,
-              "Offset": 29,
-              "EndOffset": 31,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 34,
-              "Offset": 29,
-              "EndOffset": 51,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 1
-            }
-          ]
-        },
-        "Microsoft.AspNetCore.Mvc.ActionResult`1<System.Collections.Generic.IEnumerable`1<TryitterApi.DTOs.StudentDTO>> TryitterApi.Controllers.StudentsController::GetStudantsAndPosts()": {
-          "Lines": {
-            "44": 0,
+            "33": 2,
+            "35": 2,
+            "36": 2,
+            "37": 2,
+            "38": 0,
+            "39": 0,
+            "41": 2,
+            "43": 2,
             "46": 0,
             "47": 0,
-            "48": 0,
             "49": 0,
-            "50": 0,
-            "52": 0,
-            "53": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0,
-            "59": 0,
-            "61": 0
+            "52": 2
           },
           "Branches": [
             {
-              "Line": 48,
+              "Line": 37,
               "Offset": 30,
               "EndOffset": 32,
               "Path": 0,
@@ -2421,7 +2390,42 @@
               "Hits": 0
             },
             {
-              "Line": 48,
+              "Line": 37,
+              "Offset": 30,
+              "EndOffset": 52,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "Microsoft.AspNetCore.Mvc.ActionResult`1<System.Collections.Generic.IEnumerable`1<TryitterApi.DTOs.StudentDTO>> TryitterApi.Controllers.StudentsController::GetStudantsAndPosts()": {
+          "Lines": {
+            "56": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "64": 0,
+            "65": 0,
+            "68": 0,
+            "69": 0,
+            "70": 0,
+            "71": 0,
+            "73": 0
+          },
+          "Branches": [
+            {
+              "Line": 60,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 60,
               "Offset": 30,
               "EndOffset": 52,
               "Path": 1,
@@ -2432,23 +2436,23 @@
         },
         "Microsoft.AspNetCore.Mvc.ActionResult`1<TryitterApi.DTOs.StudentDTO> TryitterApi.Controllers.StudentsController::Get(System.Int32)": {
           "Lines": {
-            "65": 0,
-            "67": 0,
-            "68": 0,
-            "69": 0,
-            "70": 0,
-            "71": 0,
-            "73": 0,
-            "75": 0,
-            "79": 0,
-            "80": 0,
-            "81": 0,
+            "77": 1,
+            "79": 1,
+            "80": 1,
+            "81": 1,
             "82": 0,
-            "84": 0
+            "83": 0,
+            "85": 1,
+            "87": 1,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "94": 0,
+            "96": 1
           },
           "Branches": [
             {
-              "Line": 69,
+              "Line": 81,
               "Offset": 133,
               "EndOffset": 135,
               "Path": 0,
@@ -2456,34 +2460,34 @@
               "Hits": 0
             },
             {
-              "Line": 69,
+              "Line": 81,
               "Offset": 133,
               "EndOffset": 208,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         },
         "Microsoft.AspNetCore.Mvc.ActionResult TryitterApi.Controllers.StudentsController::Post(TryitterApi.Models.Student)": {
           "Lines": {
-            "88": 0,
-            "90": 0,
-            "91": 0,
-            "92": 0,
-            "94": 0,
-            "95": 0,
-            "97": 0,
-            "98": 0,
-            "101": 0,
+            "100": 0,
             "102": 0,
             "103": 0,
             "104": 0,
-            "107": 0
+            "106": 0,
+            "107": 0,
+            "109": 0,
+            "110": 0,
+            "113": 0,
+            "114": 0,
+            "115": 0,
+            "116": 0,
+            "119": 0
           },
           "Branches": [
             {
-              "Line": 91,
+              "Line": 103,
               "Offset": 8,
               "EndOffset": 10,
               "Path": 0,
@@ -2491,7 +2495,7 @@
               "Hits": 0
             },
             {
-              "Line": 91,
+              "Line": 103,
               "Offset": 8,
               "EndOffset": 24,
               "Path": 1,
@@ -2502,23 +2506,23 @@
         },
         "Microsoft.AspNetCore.Mvc.ActionResult TryitterApi.Controllers.StudentsController::Put(System.Int32,TryitterApi.Models.Student)": {
           "Lines": {
-            "111": 0,
-            "113": 0,
-            "114": 0,
-            "115": 0,
-            "116": 0,
-            "119": 0,
-            "120": 0,
-            "121": 0,
-            "124": 0,
+            "123": 0,
             "125": 0,
             "126": 0,
             "127": 0,
-            "129": 0
+            "128": 0,
+            "131": 0,
+            "132": 0,
+            "133": 0,
+            "136": 0,
+            "137": 0,
+            "138": 0,
+            "139": 0,
+            "141": 0
           },
           "Branches": [
             {
-              "Line": 114,
+              "Line": 126,
               "Offset": 16,
               "EndOffset": 18,
               "Path": 0,
@@ -2526,7 +2530,7 @@
               "Hits": 0
             },
             {
-              "Line": 114,
+              "Line": 126,
               "Offset": 16,
               "EndOffset": 79,
               "Path": 1,
@@ -2537,24 +2541,24 @@
         },
         "Microsoft.AspNetCore.Mvc.ActionResult TryitterApi.Controllers.StudentsController::Delete(System.Int32)": {
           "Lines": {
-            "133": 2,
-            "135": 2,
-            "136": 2,
-            "138": 2,
-            "139": 2,
-            "140": 2,
-            "142": 0,
-            "143": 0,
-            "145": 0,
-            "148": 0,
-            "149": 0,
-            "150": 0,
-            "151": 0,
-            "153": 2
+            "145": 3,
+            "147": 3,
+            "148": 3,
+            "150": 3,
+            "151": 2,
+            "152": 2,
+            "154": 1,
+            "155": 1,
+            "157": 1,
+            "160": 0,
+            "161": 0,
+            "162": 0,
+            "163": 0,
+            "165": 3
           },
           "Branches": [
             {
-              "Line": 138,
+              "Line": 150,
               "Offset": 131,
               "EndOffset": 133,
               "Path": 0,
@@ -2562,22 +2566,22 @@
               "Hits": 2
             },
             {
-              "Line": 138,
+              "Line": 150,
               "Offset": 131,
               "EndOffset": 201,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 0
+              "Hits": 1
             }
           ]
         },
         "System.Void TryitterApi.Controllers.StudentsController::.ctor(TryitterApi.Repository.IUnitOfWork,AutoMapper.IMapper)": {
           "Lines": {
-            "24": 3,
-            "25": 3,
-            "26": 3,
-            "27": 3,
-            "28": 3
+            "24": 6,
+            "25": 6,
+            "26": 6,
+            "27": 6,
+            "28": 6
           },
           "Branches": []
         }
@@ -2587,20 +2591,20 @@
       "TryitterApi.Context.MyContext": {
         "Microsoft.EntityFrameworkCore.DbSet`1<TryitterApi.Models.Student> TryitterApi.Context.MyContext::get_Students()": {
           "Lines": {
-            "14": 8
+            "14": 12
           },
           "Branches": []
         },
         "Microsoft.EntityFrameworkCore.DbSet`1<TryitterApi.Models.Post> TryitterApi.Context.MyContext::get_Posts()": {
           "Lines": {
-            "15": 8
+            "15": 12
           },
           "Branches": []
         },
         "System.Void TryitterApi.Context.MyContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<TryitterApi.Context.MyContext>)": {
           "Lines": {
-            "10": 8,
-            "11": 16
+            "10": 12,
+            "11": 24
           },
           "Branches": []
         }

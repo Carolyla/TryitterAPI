@@ -11,7 +11,7 @@ namespace TryitterAPI.Migrations
         protected override void Up(MigrationBuilder mb)
         {
             mb.Sql("Insert into Posts(StudentId, Title, Content, ImageUrl, CreatedAt, UpdateAt) " +
-            "Values(1,'Fim da Aceleração', 'Estamos caminhando para finalizar o último projeto', 'image00.jpg', GETDATE(), GETDATE())");
+            "Values(1,'Fim da Aceleração', 'Estamos caminhando para finalizar o último projeto, amém', 'image00.jpg', GETDATE(), GETDATE())");
             mb.Sql("Insert into Posts(StudentId, Title, Content, ImageUrl, CreatedAt, UpdateAt) " +
             "Values(2,'Novos Rumos', 'Grandes aprendizados na XP Inc', 'image.jpg', GETDATE(), GETDATE())");
             mb.Sql("Insert into Posts(StudentId, Title, Content, ImageUrl, CreatedAt, UpdateAt) " +
