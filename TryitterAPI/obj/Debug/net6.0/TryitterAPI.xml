@@ -4,11 +4,83 @@
         <name>TryitterAPI</name>
     </assembly>
     <members>
+        <member name="M:TryitterApi.Controllers.AutorizaController.Login(TryitterApi.DTOs.UserDTO)">
+             <summary>
+             Login de um unuário cadastraddo para acesso a API
+             </summary>
+             <returns> Retorna um novo token criado </returns>
+             <remarks>
+             Sample request:
+            
+                 Autoriza /Login
+                 {
+                    "email": "helena@email.com",
+                    "password": "String1@",
+                    "confirmPassword": "String1@"
+                 }
+            
+             </remarks>
+        </member>
         <member name="M:TryitterApi.Controllers.PostsController.Get(System.Int32)">
             <summary>
             Exibe um post através de seu Id. digite o número do post e clique em executar.
             </summary>
             <returns>Retorna um objeto com as informações do post de Id conrrespondente</returns>
+        </member>
+        <member name="M:TryitterApi.Controllers.StudentsController.Get">
+            <summary>
+            Retorna todos os estudantes
+            </summary>
+        </member>
+        <member name="M:TryitterApi.Controllers.StudentsController.GetStudantsAndPosts">
+            <summary>
+            Retorna todos os estudantes e suas postagens no nosso blog.
+            </summary>
+        </member>
+        <member name="M:TryitterApi.Controllers.StudentsController.Get(System.Int32)">
+            <summary>
+            Creates a TodoItem.
+            </summary>
+            <param name="StudantId">Número de identificação o estudante no banco de dados</param>
+        </member>
+        <member name="M:TryitterApi.Controllers.StudentsController.Post(TryitterApi.Models.Student)">
+             <summary>
+             Creates a TodoItem.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Todo
+                 {
+                    "id": 1,
+                    "name": "Item #1",
+                    "isComplete": true
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:TryitterApi.Controllers.StudentsController.Put(System.Int32,TryitterApi.Models.Student)">
+             <summary>
+             Creates a TodoItem.
+             </summary>
+             <param name="studant"></param>
+             <returns>A newly created TodoItem</returns>
+             <remarks>
+             Sample request:
+            
+                 POST /Todo
+                 {
+                    "id": 1,
+                    "name": "Item #1",
+                    "isComplete": true
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:TryitterApi.Controllers.StudentsController.Delete(System.Int32)">
+            <summary>
+            Deleta um Student pelo seu Id
+            </summary>
         </member>
         <member name="T:TryitterAPI.Migrations.MigracaoInicial">
             <inheritdoc />

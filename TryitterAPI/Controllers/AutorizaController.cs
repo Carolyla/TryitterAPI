@@ -32,6 +32,29 @@ namespace TryitterApi.Controllers
             return "AutorizaController :: Acessdo em : " + DateTime.Now.ToLongDateString();
         }
 
+        /// <summary>
+        /// Registro de um novo usuário no banco de dados para acesso à API
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// Criar um objeto do tipo json com as respectivas chaves/valor
+        ///   chave "email" , colocar um email válido;  
+        ///   chave "password", inserir um valor com o seguinte formato: 
+        ///    * uma senha alfanúmerica; 
+        ///    * com pelo menos 1 caracter especial;
+        ///    * com no mínimo uma letra maiuscula;
+        ///   chave "confirmPassword", repetir as informações inseridas em "password"
+        ///
+        ///   Exemplo:
+        ///
+        ///     Autoriza /Login
+        ///     {
+        ///        "email": "helena@email.com",
+        ///        "password": "String1@",
+        ///        "confirmPassword": "String1@"
+        ///     }
+        ///
+        /// </remarks>
         [HttpPost("Register")]
 
         public async Task<ActionResult> RegisterUser(UserDTO model)
@@ -55,6 +78,24 @@ namespace TryitterApi.Controllers
             return Ok(GeraToken(model));
 
         }
+        /// <summary>
+        /// Login de um usuário cadastrado no banco de dados para acesso a API
+        /// </summary>
+              /// <returns> Retorna um novo token criado </returns>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Autoriza /Login
+        ///     Copiar json com informações de usuário e colar para login na API
+        ///
+        ///     {
+        ///        "email": "helena@email.com",
+        ///        "password": "String1@",
+        ///        "confirmPassword": "String1@"
+        ///     }
+        ///
+        /// OBS: caso retorne "Login inválido" é necessário fazer o registro do usuário
+        /// </remarks>
         [HttpPost("Login")]
 
         public async Task<ActionResult> Login(UserDTO userInfo)
@@ -120,10 +161,3 @@ namespace TryitterApi.Controllers
     }
 }
 
-// login para teste no swagger, colocar no readme
-// {
-//   "email": "helena@email.com",
-//   "password": "String1@",
-//   "confirmPassword": "String1@"
-// }
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImhlbGVuYUBlbWFpbC5jb20iLCJtZXVDbGFpbiI6ImNyaXB0byIsImp0aSI6ImY1N2NmN2ZiLTQ5NTgtNGI0Zi05MGY0LTdlMzhjZTYwZjI4YSIsImV4cCI6MTY3NDYzMzUzNiwiaXNzIjoiVHJ5aXR0ZXJfSXNzdWVyIiwiYXVkIjoiVHJ5aXR0ZXJfQXVkaWVuY2UifQ.kiDcBqy0pSW8XjiWg24u7xUtypUw7JwYXlJ9xhHcKp0

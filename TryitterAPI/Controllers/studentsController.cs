@@ -26,7 +26,9 @@ namespace TryitterApi.Controllers
             _uof = context;
             _mapper = mapper;
         }
-
+        /// <summary>
+        /// Retorna todos os estudantes
+        /// </summary>
         [HttpGet]
     
         public ActionResult<IEnumerable<StudentDTO>> Get()
@@ -50,7 +52,9 @@ namespace TryitterApi.Controllers
             }
             
         }
-
+        /// <summary>
+        /// Retorna todos os estudantes e suas postagens no nosso blog.
+        /// </summary>
         [HttpGet("posts")]
         public ActionResult<IEnumerable<StudentDTO>> GetStudantsAndPosts()
         {
@@ -72,6 +76,10 @@ namespace TryitterApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Creates a TodoItem.
+        /// </summary>
+        /// <param name="StudantId">Número de identificação o estudante no banco de dados</param>
         [HttpGet("{id:int}", Name = "Obter Usuario")]
         public ActionResult<StudentDTO> Get(int id)
         {
@@ -95,6 +103,23 @@ namespace TryitterApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cria um novo estudante
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Studants
+        ///     {
+        ///        "title": "um novo título",
+        ///        "content": "um novo conteúdo interessante",
+        ///        "imageUrl": "represnta.jpg",
+        ///        "studentId": 2
+        ///     }
+        ///
+        /// OBS: Não precisa inserir o Id do post, é criado automaticamente,
+        /// mas é preciso inserir o Id do estudante corretamente
+        /// </remarks>
         [HttpPost]
         public ActionResult Post(Student student)
         {
@@ -117,6 +142,23 @@ namespace TryitterApi.Controllers
             }
 
         }
+
+        /// <summary>
+        /// Atualiza as informações de um estudante no banco de dados
+        /// </summary>
+        /// <param name="studant"></param>
+        /// <returns>A newly created TodoItem</returns>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item #1",
+        ///        "isComplete": true
+        ///     }
+        ///
+        /// </remarks>
         [HttpPut("{id:int}")]
 
         public ActionResult Put(int id, Student student)
@@ -139,7 +181,9 @@ namespace TryitterApi.Controllers
                "Não conseguimos completar sua solicitação");
             }
         }
-
+        /// <summary>
+        /// Deleta um Student pelo seu Id
+        /// </summary>
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
