@@ -24,7 +24,9 @@ namespace TryitterApi.Controllers
             _uof = context;
             _mapper = mapper;
         }
-        
+        /// <summary>
+        /// Retorna todos os posts do banco de dados.
+        /// </summary>
         [HttpGet]
         public ActionResult<IEnumerable<PostDTO>> Get()
         {
@@ -47,16 +49,19 @@ namespace TryitterApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Retorna todos os posts do banco de dados a partir do mais recente para o mais antigo.
+        /// </summary>
         [HttpGet("OrdemDeCriação")]
         public ActionResult<IEnumerable<Post>> GetPostCreated()
         {
             return _uof.PostRepository.GetByCreated().ToList();
         }
         /// <summary>
-        /// Exibe um post através de seu Id. digite o número do post e clique em executar.
+        /// Exibe um post através de seu Id. Digite o número do  Id no parâmetro e clique em executar.
         /// </summary>
         /// <returns>Retorna um objeto com as informações do post de Id conrrespondente</returns>
-        [HttpGet("{id:int}", Name = "Obter produto")]
+        [HttpGet("{id:int}")]
         
         public ActionResult<PostDTO> Get(int id)
         {
@@ -78,7 +83,23 @@ namespace TryitterApi.Controllers
                   "Não conseguimos completar sua solicitação");
             }
         }
-
+        /// <summary>
+        /// Cria um novo post no banco de dados
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /posts
+        ///     {
+        ///        "title": "um novo título",
+        ///        "content": "um novo conteúdo interessante",
+        ///        "imageUrl": "represnta.jpg",
+        ///        "studentId": 2
+        ///     }
+        ///
+        /// OBS: Não precisa inserir o Id do post, é criado automaticamente,
+        /// mas é preciso inserir o Id do estudante corretamente
+        /// </remarks>
         [HttpPost]
         public ActionResult Post(PostDTO postDto)
         {
@@ -105,7 +126,9 @@ namespace TryitterApi.Controllers
             }
             
         }
-
+        /// <summary>
+        /// Atualiza as informações do post no banco de dados pelo seu Id
+        /// </summary>
         [HttpPut("{id:int}")]
 
         public ActionResult Put(int id, Post post)
@@ -129,7 +152,9 @@ namespace TryitterApi.Controllers
                "Não conseguimos completar sua solicitação");
             }
         }
-
+        /// <summary>
+        /// Deleta um  post do banco de dados pelo seu Id
+        /// </summary>
         [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {

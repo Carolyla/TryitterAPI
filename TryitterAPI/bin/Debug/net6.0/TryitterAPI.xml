@@ -4,13 +4,21 @@
         <name>TryitterAPI</name>
     </assembly>
     <members>
-        <member name="M:TryitterApi.Controllers.AutorizaController.Login(TryitterApi.DTOs.UserDTO)">
+        <member name="M:TryitterApi.Controllers.AutorizaController.RegisterUser(TryitterApi.DTOs.UserDTO)">
              <summary>
-             Login de um unuário cadastraddo para acesso a API
+             Registro de um novo usuário no banco de dados para acesso à API
              </summary>
-             <returns> Retorna um novo token criado </returns>
              <remarks>
              Sample request:
+             Criar um objeto do tipo json com as respectivas chaves/valor
+               chave "email" , colocar um email válido;  
+               chave "password", inserir um valor com o seguinte formato: 
+                * uma senha alfanúmerica; 
+                * com pelo menos 1 caracter especial;
+                * com no mínimo uma letra maiuscula;
+               chave "confirmPassword", repetir as informações inseridas em "password"
+            
+               Exemplo:
             
                  Autoriza /Login
                  {
@@ -21,11 +29,60 @@
             
              </remarks>
         </member>
+        <member name="M:TryitterApi.Controllers.AutorizaController.Login(TryitterApi.DTOs.UserDTO)">
+             <summary>
+             Login de um usuário cadastrado no banco de dados para acesso a API
+             </summary>
+             <returns> Retorna um novo token criado </returns>
+             <remarks>
+             Sample request:
+            
+                 Autoriza /Login
+                 Copiar json com informações de usuário e colar para login na API
+            
+                 {
+                    "email": "helena@email.com",
+                    "password": "String1@",
+                    "confirmPassword": "String1@"
+                 }
+            
+             OBS: caso retorne "Login inválido" é necessário fazer o registro do usuário
+             </remarks>
+        </member>
         <member name="M:TryitterApi.Controllers.PostsController.Get(System.Int32)">
             <summary>
-            Exibe um post através de seu Id. digite o número do post e clique em executar.
+            Exibe um post através de seu Id. Digite o número do  Id no parâmetro e clique em executar.
             </summary>
             <returns>Retorna um objeto com as informações do post de Id conrrespondente</returns>
+        </member>
+        <member name="M:TryitterApi.Controllers.PostsController.Post(TryitterApi.DTOs.PostDTO)">
+             <summary>
+             Cria um novo post no banco de dados
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /posts
+                 {
+                    "title": "um novo título",
+                    "content": "um novo conteúdo interessante",
+                    "imageUrl": "represnta.jpg",
+                    "studentId": 2
+                 }
+            
+             OBS: Não precisa inserir o Id do post, é criado automaticamente,
+             mas é preciso inserir o Id do estudante corretamente
+             </remarks>
+        </member>
+        <member name="M:TryitterApi.Controllers.PostsController.Put(System.Int32,TryitterApi.Models.Post)">
+            <summary>
+            Atualiza as informações do post no banco de dados pelo seu Id
+            </summary>
+        </member>
+        <member name="M:TryitterApi.Controllers.PostsController.Delete(System.Int32)">
+            <summary>
+            Deleta um  post do banco de dados pelo seu Id
+            </summary>
         </member>
         <member name="M:TryitterApi.Controllers.StudentsController.Get">
             <summary>
@@ -39,43 +96,31 @@
         </member>
         <member name="M:TryitterApi.Controllers.StudentsController.Get(System.Int32)">
             <summary>
-            Creates a TodoItem.
+            Retorna um estudante pelo seu Id no banco de dados.
             </summary>
             <param name="StudantId">Número de identificação o estudante no banco de dados</param>
         </member>
         <member name="M:TryitterApi.Controllers.StudentsController.Post(TryitterApi.Models.Student)">
              <summary>
-             Creates a TodoItem.
+             Cria um novo estudante
              </summary>
              <remarks>
              Sample request:
             
-                 POST /Todo
+                 POST /Studants
                  {
-                    "id": 1,
-                    "name": "Item #1",
-                    "isComplete": true
+                    "name": "string",
+                    "email": "user@example.com",
+                    "password": "string",
                  }
             
+             OBS: Não precisa inserir o Id do estudante, é criado automaticamente.
              </remarks>
         </member>
-        <member name="M:TryitterApi.Controllers.StudentsController.Put(System.Int32,TryitterApi.Models.Student)">
-             <summary>
-             Creates a TodoItem.
-             </summary>
-             <param name="studant"></param>
-             <returns>A newly created TodoItem</returns>
-             <remarks>
-             Sample request:
-            
-                 POST /Todo
-                 {
-                    "id": 1,
-                    "name": "Item #1",
-                    "isComplete": true
-                 }
-            
-             </remarks>
+        <member name="M:TryitterApi.Controllers.StudentsController.Put(System.Int32,TryitterApi.DTOs.StudentDTO)">
+            <summary>
+            Atualiza as informações de um estudante no banco de dados
+            </summary>
         </member>
         <member name="M:TryitterApi.Controllers.StudentsController.Delete(System.Int32)">
             <summary>

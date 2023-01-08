@@ -77,7 +77,7 @@ namespace TryitterApi.Controllers
         }
 
         /// <summary>
-        /// Creates a TodoItem.
+        /// Retorna um estudante pelo seu Id no banco de dados.
         /// </summary>
         /// <param name="StudantId">Número de identificação o estudante no banco de dados</param>
         [HttpGet("{id:int}", Name = "Obter Usuario")]
@@ -111,14 +111,12 @@ namespace TryitterApi.Controllers
         ///
         ///     POST /Studants
         ///     {
-        ///        "title": "um novo título",
-        ///        "content": "um novo conteúdo interessante",
-        ///        "imageUrl": "represnta.jpg",
-        ///        "studentId": 2
+        ///        "name": "string",
+        ///        "email": "user@example.com",
+        ///        "password": "string",
         ///     }
         ///
-        /// OBS: Não precisa inserir o Id do post, é criado automaticamente,
-        /// mas é preciso inserir o Id do estudante corretamente
+        /// OBS: Não precisa inserir o Id do estudante, é criado automaticamente.
         /// </remarks>
         [HttpPost]
         public ActionResult Post(Student student)
@@ -146,29 +144,17 @@ namespace TryitterApi.Controllers
         /// <summary>
         /// Atualiza as informações de um estudante no banco de dados
         /// </summary>
-        /// <param name="studant"></param>
-        /// <returns>A newly created TodoItem</returns>
-        /// <remarks>
-        /// Sample request:
-        ///
-        ///     POST /Todo
-        ///     {
-        ///        "id": 1,
-        ///        "name": "Item #1",
-        ///        "isComplete": true
-        ///     }
-        ///
-        /// </remarks>
         [HttpPut("{id:int}")]
 
-        public ActionResult Put(int id, Student student)
+        public ActionResult Put(int id, StudentDTO studentDTO)
         {
             try
             {
-            if (id != student.StudentId)
+            if (id != studentDTO.StudentId)
             {
                 return BadRequest($"Usuario com id= {id} não encontrado");
             }
+            var student = _mapper.Map<Student>(studentDTO);
 
                 _uof.StudentRepository.Update(student);
                 _uof.Commit();
