@@ -30,7 +30,7 @@ builder.Services.AddSwaggerGen(config =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Header de autorização utilizando o Jwt no esquema Bearer",
+        Description = "Header de autorização utilizando o Jwt no esquema Bearer.\r\n\r\nInforme 'Bearer [espaço] e seu token.\r\n\r\nExemplo: \'Bearer UyhejaiLojk458EaujqEVc'\r\n\r\nAtenção: O token é encontrado após fazer o login ou registrar um novo usuário na rota '/Autoriza'",
     });
     config.AddSecurityRequirement(new OpenApiSecurityRequirement
     {

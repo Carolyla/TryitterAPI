@@ -23,9 +23,11 @@ namespace TryitterApi.Controllers
             _signInManager = signInManager;
             _configuration = configuration;
         }
-        
-        // public AutorizaController(){}
 
+        // public AutorizaController(){}
+        /// <summary>
+        /// Verifica se a API está rodando corretamente.
+        /// </summary>
         [HttpGet]
         public ActionResult<string> Get()
         {
@@ -38,12 +40,12 @@ namespace TryitterApi.Controllers
         /// <remarks>
         /// Sample request:
         /// Criar um objeto do tipo json com as respectivas chaves/valor
-        ///   chave "email" , colocar um email válido;  
-        ///   chave "password", inserir um valor com o seguinte formato: 
+        /// chave "email" , colocar um email válido;  
+        /// chave "password", inserir um valor com o seguinte formato: 
         ///    * uma senha alfanúmerica; 
         ///    * com pelo menos 1 caracter especial;
         ///    * com no mínimo uma letra maiuscula;
-        ///   chave "confirmPassword", repetir as informações inseridas em "password"
+        ///  chave "confirmPassword", repetir as informações inseridas em "password"
         ///
         ///   Exemplo:
         ///
@@ -79,7 +81,7 @@ namespace TryitterApi.Controllers
 
         }
         /// <summary>
-        /// Login de um usuário cadastrado no banco de dados para acesso a API
+        /// Login de um usuário cadastrado no banco de dados para acesso à API
         /// </summary>
               /// <returns> Retorna um novo token criado </returns>
         /// <remarks>

@@ -4,6 +4,11 @@
         <name>TryitterAPI</name>
     </assembly>
     <members>
+        <member name="M:TryitterApi.Controllers.AutorizaController.Get">
+            <summary>
+            Verifica se a API está rodando corretamente.
+            </summary>
+        </member>
         <member name="M:TryitterApi.Controllers.AutorizaController.RegisterUser(TryitterApi.DTOs.UserDTO)">
              <summary>
              Registro de um novo usuário no banco de dados para acesso à API
@@ -11,12 +16,12 @@
              <remarks>
              Sample request:
              Criar um objeto do tipo json com as respectivas chaves/valor
-               chave "email" , colocar um email válido;  
-               chave "password", inserir um valor com o seguinte formato: 
+             chave "email" , colocar um email válido;  
+             chave "password", inserir um valor com o seguinte formato: 
                 * uma senha alfanúmerica; 
                 * com pelo menos 1 caracter especial;
                 * com no mínimo uma letra maiuscula;
-               chave "confirmPassword", repetir as informações inseridas em "password"
+              chave "confirmPassword", repetir as informações inseridas em "password"
             
                Exemplo:
             
@@ -31,7 +36,7 @@
         </member>
         <member name="M:TryitterApi.Controllers.AutorizaController.Login(TryitterApi.DTOs.UserDTO)">
              <summary>
-             Login de um usuário cadastrado no banco de dados para acesso a API
+             Login de um usuário cadastrado no banco de dados para acesso à API
              </summary>
              <returns> Retorna um novo token criado </returns>
              <remarks>
@@ -48,6 +53,16 @@
             
              OBS: caso retorne "Login inválido" é necessário fazer o registro do usuário
              </remarks>
+        </member>
+        <member name="M:TryitterApi.Controllers.PostsController.Get">
+            <summary>
+            Retorna todos os posts do banco de dados.
+            </summary>
+        </member>
+        <member name="M:TryitterApi.Controllers.PostsController.GetPostCreated">
+            <summary>
+            Retorna todos os posts do banco de dados a partir do mais recente para o mais antigo.
+            </summary>
         </member>
         <member name="M:TryitterApi.Controllers.PostsController.Get(System.Int32)">
             <summary>
