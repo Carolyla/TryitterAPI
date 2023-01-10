@@ -15,7 +15,7 @@ Para rodar a API localmente utilizando Docker, certifique-se de ter o Docker est
 Clone o repositório:</br>
 git@github.com:Carolyla/TryitterAPI.git </br>
 Entre na pasta do repositório que você acabou de clonar:</br>
-* cd TryitterAPI
+cd TryitterAPI
 Rode o comando no seu terminal para baixar a imagem do SQL Server</br>
 docker pull mcr.microsoft.com/mssql/server</br>
 Assim que o container do SQL já está rodando, atualize a connectionString no arquivo appsettings.json.
@@ -24,8 +24,14 @@ Assim que o container do SQL já está rodando, atualize a connectionString no a
 },
 Rode o comando para criar as tabelas no banco de dados:
 dotnet ef database update OBS: É ter instalado EF Core Tools para rodar esse comando.
-Agora é só rodar a aplicação! Ela abrirá direto no Swagger!!
+Agora é só rodar a aplicação! Ela abrirá direto no Swagger!!!
 dotnet run
+<hr />
+
+</br>
+
+
+
 
           
           
